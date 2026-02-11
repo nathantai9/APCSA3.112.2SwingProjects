@@ -34,7 +34,8 @@ public class U02aSwingProjectsApp {
     // display a message such as I'm sorry, Dave. I'm afraid I can't do that.
     // Replace Dave with the name that was provided by the user. Display the "I'm
     // sorry" message using a JOptionPane MessageDialog.
-
+    String command = JOptionPane.showInputDialog("My name is Hal! What would you like me to do?");
+    JOptionPane.showMessageDialog(null, "I'm sorry, " + name + ". I'm afraid I can't do that.");
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Part 3 of 4
     System.out.println("Part 3 of 4 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
