@@ -15,7 +15,7 @@ public class U02aSwingProjectsApp {
     // Part 1 of 4
     System.out.println("Part 1 of 4 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    // Run the following. TODO: modify it to print “Hello, name!”, displaying the
+    // Run the following. DONE: modify it to print “Hello, name!”, displaying the
     // name that the user typed in.
 
     String name = JOptionPane.showInputDialog("What is your name?");
@@ -23,24 +23,29 @@ public class U02aSwingProjectsApp {
 
     // In addition to saying “Hello, name!” in the console, can you say "Hello,
     // name!" in a JOptionPane MessageDialog?
-    // TODO: say "Hello, name!" in a JOptionPane MessageDialog
+    // DONE: say "Hello, name!" in a JOptionPane MessageDialog
+
+    JOptionPane.showMessageDialog(null, "Hello, " + name + "!");
 
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Part 2 of 4
     System.out.println("Part 2 of 4 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    // TODO: Write code so that the dialog continues with the message
+    // DONE: Write code so that the dialog continues with the message
     // “My name is Hal! What would you like me to do?” Discard the user’s input and
     // display a message such as I'm sorry, Dave. I'm afraid I can't do that.
     // Replace Dave with the name that was provided by the user. Display the "I'm
     // sorry" message using a JOptionPane MessageDialog.
-    String command = JOptionPane.showInputDialog("My name is Hal! What would you like me to do?");
-    JOptionPane.showMessageDialog(null, "I'm sorry, " + name + ". I'm afraid I can't do that.");
+
+    JOptionPane.showInputDialog("My name is Hal! What would you like me to do?");
+    JOptionPane.showMessageDialog(null,
+        "I'm sorry, " + name + ". I'm afraid I can't do that.");
+
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Part 3 of 4
     System.out.println("Part 3 of 4 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    // Run the following. TODO: modify it to show a different greeting and image.
+    // Run the following. DONE: modify it to show a different greeting and image.
     // Look up your own image on the internet!
 
     // Examples...
@@ -48,10 +53,10 @@ public class U02aSwingProjectsApp {
     // URI imageUri = new URI("https://docs.oracle.com/cd/E19199-01/816-6873/sun.gif");
     // URI imageUri = new URI("https://blogs.oracle.com/wp-content/uploads/sites/108/2025/11/Java-horz-clr-16-1.png");
     
-    URI imageUri = new URI("https://dev.java/assets/images/duke/duke_star7.png");
+    URI imageUri = new URI("https://upload.wikimedia.org/wikipedia/commons/3/3f/LogoJava.svg");
     URL imageLocation = imageUri.toURL();
     ImageIcon icon = new ImageIcon(imageLocation);
-    JOptionPane.showMessageDialog(null, "Hello", "Title",
+    JOptionPane.showMessageDialog(null, "Welcome, " + name + "!", "Title",
         JOptionPane.PLAIN_MESSAGE, icon);
 
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -70,14 +75,25 @@ public class U02aSwingProjectsApp {
     JFrame frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
-    // TODO: Construct a rectangle and set the frame bounds
+
+    // DONE: Construct a rectangle and set the frame bounds
+
+    Rectangle rect = new Rectangle(100, 100, 300, 200);
+    frame.setBounds(rect);
 
     JOptionPane.showMessageDialog(frame, "Click OK to move the box");
-    // TODO: Move the rectangle and set the frame bounds again
+
+    // DONE: Move the rectangle and set the frame bounds again
+
+    rect.translate(100, 50);
+    frame.setBounds(rect);
 
     JOptionPane.showMessageDialog(frame, "Click OK to move the box AGAIN!!!!!");
-    // TODO: Translate the rectangle again and set the frame bounds
+
+    // DONE: Translate the rectangle again and set the frame bounds
     // again
 
+    rect.translate(100, 50);
+    frame.setBounds(rect);
   }
 }
